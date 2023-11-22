@@ -18,12 +18,14 @@ namespace AVN_Plugin
         {
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
-            Selection choices = uidoc.Selection;
+            
 
             FilteredElementCollector collector = new FilteredElementCollector(doc);
             ICollection<Element> familys = collector.OfClass(typeof(Family)).ToElements();
 
-            string categoryName = "Соединительные детали кабельных лотков";
+            //string categoryName = "Соединительные детали кабельных лотков";
+            string categoryName = "Соединительные детали воздуховодов";
+            string prefixName = "Дв";
 
             // Поиск семейств по имени категории
             List<ElementId> familyIds = new List<ElementId>();
@@ -42,12 +44,23 @@ namespace AVN_Plugin
             {
                 tr.Start();
 
+                // Вывод списка имён семейств и их изменение
                 foreach (ElementId id in familyIds)
                 {
 
                     Element element = doc.GetElement(id);
+                    int index = element.Name.IndexOf("_");
 
-                    element.Name = "Дкл_" + element.Name;
+                    //Обрезаем имя семейство до первого символа "_" и добавляем префикс
+                    if(index != -1)
+                    {
+                        element.Name = prefixName + "_" + element.Name.Substring(index + 1);
+                    }
+                    else
+                    {
+                        element.Name = prefixName + "_" + element.Name;
+                    }
+                    
 
                     names = names + "\n" + element.Name;
                 }
