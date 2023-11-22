@@ -30,65 +30,65 @@ namespace AVN_Plugin
             return Result.Succeeded;
         }
 
-        public void setLevelName(string razdelName, int startCounter)
-        {
-            Selection choices = _doc.Selection;
+        //public void setLevelName(string razdelName, int startCounter)
+        //{
+        //    Selection choices = _doc.Selection;
 
-            IList<Element> selectedLevels = choices.PickElementsByRectangle(new Filters.LevelFilter());
+        //    IList<Element> selectedLevels = choices.PickElementsByRectangle(new Filters.LevelFilter());
 
-            //Сортировка полученного списка уровней по высоте расположения уровня
-            for (int i = 0; i < selectedLevels.Count; i++)
-            {
+        //    //Сортировка полученного списка уровней по высоте расположения уровня
+        //    for (int i = 0; i < selectedLevels.Count; i++)
+        //    {
 
-                for (int j = i + 1; j < selectedLevels.Count; j++)
-                {
-                    if (selectedLevels[i].get_Parameter(BuiltInParameter.LEVEL_ELEV).AsDouble() >
-                        selectedLevels[j].get_Parameter(BuiltInParameter.LEVEL_ELEV).AsDouble())
-                    {
-                        (selectedLevels[i], selectedLevels[j]) = (selectedLevels[j], selectedLevels[i]);
-                    }
-                }
-            }
-            //Перебираем все элементы в выбраном списке и перезадем параметр "Имя"
-            foreach (Element level in selectedLevels)
-            {
-                Parameter levelValue = level.LookupParameter("Фасад");
-                Parameter param = level.get_Parameter(BuiltInParameter.LEVEL_ELEV);
-                Parameter levelName = level.LookupParameter("Имя");
-
-
-
-                using (Transaction newTr = new Transaction(_doc, "Переименовать уровни"))
-                {
-                    if (startCounter == 0)
-                    {
-                        startCounter++;
-                    }
-
-                    newTr.Start("Переименование уровней");
-
-                    string strCounter = string.Format("{0:d2}", startCounter);
-                    string strLevelValue = string.Format("{0:f3}", levelValue.AsDouble() * 304.8 / 1000);
-
-                    if (levelValue.AsDouble() * 304.8 / 1000 > 0)
-                    {
-                        levelName.Set($"{razdelName}_{strCounter}_План этажа_+{strLevelValue}");
-                        //TaskDialog.Show("test", $"{strCounter}_План этажа_+{strLevelValue}");
-                    }
-                    else
-                    {
-                        levelName.Set($"{razdelName}_{strCounter}_План этажа_{strLevelValue}");
-                        //TaskDialog.Show("test", $"{razdelName}_{strCounter}_План этажа_{strLevelValue}");
-                    }
+        //        for (int j = i + 1; j < selectedLevels.Count; j++)
+        //        {
+        //            if (selectedLevels[i].get_Parameter(BuiltInParameter.LEVEL_ELEV).AsDouble() >
+        //                selectedLevels[j].get_Parameter(BuiltInParameter.LEVEL_ELEV).AsDouble())
+        //            {
+        //                (selectedLevels[i], selectedLevels[j]) = (selectedLevels[j], selectedLevels[i]);
+        //            }
+        //        }
+        //    }
+        //    //Перебираем все элементы в выбраном списке и перезадем параметр "Имя"
+        //    foreach (Element level in selectedLevels)
+        //    {
+        //        Parameter levelValue = level.LookupParameter("Фасад");
+        //        Parameter param = level.get_Parameter(BuiltInParameter.LEVEL_ELEV);
+        //        Parameter levelName = level.LookupParameter("Имя");
 
 
-                    startCounter++;
 
-                    newTr.Commit();
-                }
-            }
+        //        using (Transaction newTr = new Transaction(_doc, "Переименовать уровни"))
+        //        {
+        //            if (startCounter == 0)
+        //            {
+        //                startCounter++;
+        //            }
 
-        }
+        //            newTr.Start("Переименование уровней");
+
+        //            string strCounter = string.Format("{0:d2}", startCounter);
+        //            string strLevelValue = string.Format("{0:f3}", levelValue.AsDouble() * 304.8 / 1000);
+
+        //            if (levelValue.AsDouble() * 304.8 / 1000 > 0)
+        //            {
+        //                levelName.Set($"{razdelName}_{strCounter}_План этажа_+{strLevelValue}");
+        //                //TaskDialog.Show("test", $"{strCounter}_План этажа_+{strLevelValue}");
+        //            }
+        //            else
+        //            {
+        //                levelName.Set($"{razdelName}_{strCounter}_План этажа_{strLevelValue}");
+        //                //TaskDialog.Show("test", $"{razdelName}_{strCounter}_План этажа_{strLevelValue}");
+        //            }
+
+
+        //            startCounter++;
+
+        //            newTr.Commit();
+        //        }
+        //    }
+
+        //}
     }
 }
 
