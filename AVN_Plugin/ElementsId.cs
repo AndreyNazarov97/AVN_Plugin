@@ -13,7 +13,7 @@ namespace AVN_Plugin
     [Transaction(TransactionMode.Manual)]
     public class ElementsId : IExternalCommand
     {
-        public Autodesk.Revit.UI.Result Execute(ExternalCommandData commandData,
+        public Result Execute(ExternalCommandData commandData,
             ref string message, ElementSet elements)
         {
             try
@@ -49,10 +49,10 @@ namespace AVN_Plugin
             catch (Exception e)
             {
                 message = e.Message;
-                return Autodesk.Revit.UI.Result.Failed;
+                return Result.Failed;
             }
 
-            return Autodesk.Revit.UI.Result.Succeeded;
+            return Result.Succeeded;
         }
         /// </ExampleMethod>
     }

@@ -63,10 +63,14 @@
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="LevelNaming\Filters.cs" />
     <Compile Include="LevelNaming\LevelNaming.cs" />
-    <Compile Include="LevelNaming\LevelNamingForm.xaml.cs">
-      <DependentUpon>LevelNamingForm.xaml</DependentUpon>
+    <Compile Include="LevelNaming\LevelNamingWnd .xaml.cs">
+      <DependentUpon>LevelNamingWnd .xaml</DependentUpon>
     </Compile>
+    <Compile Include="LevelNaming\LevelNamingViewModel.cs" />
+    <Compile Include="LevelNaming\LevelNamingWndHandler.cs" />
+    <Compile Include="LevelReLink\LevelReLink.cs" />
     <Compile Include="MainPanel.cs" />
+    <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,10 +94,11 @@
     <None Include="Resources\Ids_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="LevelNaming\LevelNamingForm.xaml">
+    <Page Include="LevelNaming\LevelNamingWnd .xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

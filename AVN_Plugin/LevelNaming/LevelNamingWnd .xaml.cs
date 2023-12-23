@@ -19,20 +19,17 @@ namespace AVN_Plugin.LevelFilter
     /// <summary>
     /// Логика взаимодействия для LevelFillerForm.xaml
     /// </summary>
-    public partial class LevelFillerForm : Window
+    public partial class LevelNamingWnd : Window
     {
         
 
-        public LevelFillerForm()
+        public LevelNamingWnd()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LevelNaming levelNaming = new LevelNaming();
-
-            
 
         }
 

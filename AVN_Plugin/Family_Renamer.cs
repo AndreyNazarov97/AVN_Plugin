@@ -13,7 +13,7 @@ namespace AVN_Plugin
     [Regeneration(RegenerationOption.Manual)]
     [Transaction(TransactionMode.Manual)]
     public class Family_Renamer : IExternalCommand
-    {
+    {  
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
@@ -60,8 +60,7 @@ namespace AVN_Plugin
                     {
                         element.Name = prefixName + "_" + element.Name;
                     }
-                    
-
+                 
                     names = names + "\n" + element.Name;
                 }
 
