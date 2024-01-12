@@ -1,0 +1,67 @@
+﻿{
+  "RevitLinks": [
+    {
+      "LinkNameContains": "AR_BA",
+      "WorksetNameContains": "02_AR BA"
+    },
+    {
+      "LinkNameContains": "AR_FC",
+      "WorksetNameContains": "02_AR FC"
+    },
+    {
+      "LinkNameContains": "ST_",
+      "WorksetNameContains": "03_ST"
+    },
+    {
+      "LinkNameContains": "CN_",
+      "WorksetNameContains": "06_CN"
+    },
+    {
+      "LinkNameContains": "EL_",
+      "WorksetNameContains": "07_EL"
+    },
+    {
+      "LinkNameContains": "FFW",
+      "WorksetNameContains": "08_FFW"
+    },
+    {
+      "LinkNameContains": "HVAC_AC",
+      "WorksetNameContains": "04_HVAC AC"
+    },
+    {
+      "LinkNameContains": "HVAC_HS",
+      "WorksetNameContains": "04_HVAC HS"
+    },
+    {
+      "LinkNameContains": "HVAC_SP",
+      "WorksetNameContains": "04_HVAC SP"
+    },
+    {
+      "LinkNameContains": "HVAC_VN",
+      "WorksetNameContains": "04_HVAC VN"
+    },
+    {
+      "LinkNameContains": "WSS",
+      "WorksetNameContains": "05_WSS"
+    },
+    {
+      "LinkNameContains": "WSS_SEW",
+      "WorksetNameContains": "05_WSS"
+    },
+    {
+      "LinkNameContains": "ITP",
+      "WorksetNameContains": "04_ITP"
+    }
+  ],
+  "RevitLinksTypes": [
+    {
+      "CurrentHouse": "yes",
+      "WorksetNameContains": "08_Связи текущего корпуса"
+    },
+    {
+      "CurrentHouse": "no",
+      "WorksetNameContains": "08_Связи соседних корпусов"
+
+    }
+  ]
+}

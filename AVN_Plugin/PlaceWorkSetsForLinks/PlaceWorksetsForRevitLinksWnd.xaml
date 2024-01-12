@@ -1,0 +1,16 @@
+﻿<Window x:Class="AVN_Plugin.PlaceWorkSetsForLinks.PlaceWorksetsForRevitLinksWnd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AVN_Plugin.PlaceWorkSetsForLinks"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="700" Title="PlaceWorkSets" ResizeMode="NoResize" Width="700" Height="250">
+    <Grid Height="200" Width="700">
+        <Button Content="Обзор" HorizontalAlignment="Left" Margin="424,134,0,0" VerticalAlignment="Top" Height="39" Width="92" Click="OpenFileDialogButton_Click"/>
+        <Button Command="{Binding PlaceWorksetsCommand}" Content="Ок" HorizontalAlignment="Left" Margin="555,134,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="Button_Click"/>
+        <TextBlock Text="{Binding JsonFilePath}" HorizontalAlignment="Left" Height="88" Margin="204,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" FontSize="20"/>
+        <Label Content="Путь к Json Файлу:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+    </Grid>
+</Window>
